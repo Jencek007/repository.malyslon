@@ -13,7 +13,7 @@
             <platform>all</platform>
         </extension>
     </addon>
-    <addon id="skin.estouchy" version="4.0.10" name="Estouchy" provider-name="Team Kodi, Jencek007">
+    <addon id="skin.estouchy" version="4.0.13" name="Estouchy" provider-name="Team Kodi, Jencek007">
         <requires>
             <import addon="xbmc.gui" version="5.17.0" />
         </requires>
