@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.malyslon" name="MalyslonRepo" version="1.0.3" provider-name="Jencek007">
+<addon id="repository.malyslon" name="MalyslonRepo" version="1.0.4" provider-name="Jencek007">
     <extension point="xbmc.addon.repository" name="MalyslonRepo">
         <dir>
-            <info compressed="false">https://githubusercontent.com</info>
-            <checksum>https://githubusercontent.com.md5</checksum>
-            <datadir zip="true">https://githubusercontent.com</datadir>
+            <info compressed="false">http://githubusercontent.com</info>
+            <checksum>http://githubusercontent.com.md5</checksum>
+            <datadir zip="true">http://githubusercontent.com</datadir>
         </dir>
     </extension>
     <extension point="xbmc.addon.metadata">
