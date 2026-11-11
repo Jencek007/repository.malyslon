@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.malyslon" name="Kodi addons and skins" version="1.0.0" provider-name="Jencek007">
+    <extension point="xbmc.addon.repository" name="Kodi addons and skins">
+        <dir>
+            <info compressed="false">https://githubusercontent.com</info>
+            <checksum>https://githubusercontent.com.md5</checksum>
+            <datadir zip="true">https://githubusercontent.com</datadir>
+        </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>My personal Kodi repository</summary>
+        <platform>all</platform>
+    </extension>
+</addon>
