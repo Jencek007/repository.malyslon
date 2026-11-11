@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="repository.malyslon" name="MalyslonRepo" version="1.0.2" provider-name="Jencek007">
+<addon id="repository.malyslon" name="MalyslonRepo" version="1.0.3" provider-name="Jencek007">
     <extension point="xbmc.addon.repository" name="MalyslonRepo">
         <dir>
             <info compressed="false">https://githubusercontent.com</info>
