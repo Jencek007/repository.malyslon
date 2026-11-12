@@ -1,4 +1,5 @@
 import os
+import re
 import hashlib
 import zipfile
 import shutil
@@ -11,6 +12,7 @@ class KodiRepoGenerator:
         self.zips_dir = os.path.join(self.root_dir, "zips")
         self.addons_xml_path = os.path.join(self.zips_dir, "addons.xml")
         self.md5_path = os.path.join(self.zips_dir, "addons.xml.md5")
+        self.index_html_path = os.path.join(self.root_dir, "index.html")
         
         # Ignorované složky
         self.ignore = [".git", ".github", ".idea", "zips", "__pycache__", "node_modules"]
@@ -38,7 +40,10 @@ class KodiRepoGenerator:
         for addon_id, addon_dir, version in addons:
             self._create_zip(addon_id, addon_dir, version)
 
-        print("\n✅ Vše hotovo! Složka 'zips' byla úspěšně aktualizována.")
+        # 5. Aktualizovat odkaz a verzi v index.html
+        self._update_index_html(addons)
+
+        print("\n✅ Vše hotovo! Složka 'zips' a 'index.html' byly úspěšně aktualizovány.")
 
     def _find_addons(self):
         addons = []
@@ -114,6 +119,45 @@ class KodiRepoGenerator:
                 shutil.copy(src, os.path.join(addon_zip_dir, meta_file))
 
         print(f"🤐 Zabaleno do ZIPu: {zip_name}")
+
+    def _update_index_html(self, addons):
+        if not os.path.exists(self.index_html_path):
+            print("⚠️ Soubor index.html nebyl nalezen, přeskakuji jeho aktualizaci.")
+            return
+
+        # Najde verzi pro hlavní repozitář 'repository.malyslon'
+        repo_version = None
+        for addon_id, _, version in addons:
+            if addon_id == "repository.malyslon":
+                repo_version = version
+                break
+
+        if not repo_version:
+            print("⚠️ Doplněk 'repository.malyslon' nebyl nalezen, index.html nebyl upraven.")
+            return
+
+        with open(self.index_html_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Aktualizuje odkaz href="zips/repository.malyslon/repository.malyslon-X.X.X.zip"
+        new_zip_path = f"zips/repository.malyslon/repository.malyslon-{repo_version}.zip"
+        content = re.sub(
+            r'href="zips/repository\.malyslon/repository\.malyslon-[^"]+\.zip"',
+            f'href="{new_zip_path}"',
+            content
+        )
+
+        # Aktualizuje text verze na tlačítku (vX.X.X .ZIP)
+        content = re.sub(
+            r'\(v\d+(?:\.\d+)* \.ZIP\)',
+            f'(v{repo_version} .ZIP)',
+            content
+        )
+
+        with open(self.index_html_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        print(f"🌐 Aktualizován soubor index.html na verzi v{repo_version}")
 
 if __name__ == "__main__":
     generator = KodiRepoGenerator()
