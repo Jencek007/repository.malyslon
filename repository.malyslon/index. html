@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malý Slon</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+            color: #222;
+            background-color: #f9f9fb;
+        }
+        header {
+            border-bottom: 2px solid #e1e4e8;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #1a202c;
+            margin: 0;
+        }
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Malý Slon</h1>
+        <p>Vítejte na oficiální stránce projektu.</p>
+    </header>
+    
+    <main class="card">
+        <h2>O projektu</h2>
+        <p>Stránka běží úspěšně na GitHub Pages pod adresou <strong>jencek007.github.io/repository.malyslon/</strong>.</p>
+        <p>Zde můžete doplnit vlastní texty, obrázky nebo odkazy.</p>
+    </main>
+</body>
+</html>
