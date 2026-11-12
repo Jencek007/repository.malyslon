@@ -40,7 +40,7 @@ class KodiRepoGenerator:
         for addon_id, addon_dir, version in addons:
             self._create_zip(addon_id, addon_dir, version)
 
-        # 5. Aktualizovat odkaz a verzi v index.html
+        # 5. Aktualizovat odkazy a verze v index.html
         self._update_index_html(addons)
 
         print("\n✅ Vše hotovo! Složka 'zips', root repozitáře a 'index.html' byly úspěšně aktualizovány.")
@@ -143,16 +143,23 @@ class KodiRepoGenerator:
         with open(self.index_html_path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Aktualizuje odkaz přímo na soubor v rootu: href="repository.malyslon-X.X.X.zip"
-        # (zvládne přepsat i předchozí verze s 'zips/' nebo 'repository.malyslon/')
         new_zip_path = f"repository.malyslon-{repo_version}.zip"
+
+        # 1. Aktualizuje všechny odkazy href="repository.malyslon-X.X.X.zip"
         content = re.sub(
             r'href="(?:zips/)?(?:repository\.malyslon/)?repository\.malyslon-[^"]+\.zip"',
             f'href="{new_zip_path}"',
             content
         )
 
-        # Aktualizuje text verze na tlačítku (vX.X.X .ZIP)
+        # 2. Aktualizuje text uvnitř skrytého odkazu pro Kodi (>repository.malyslon-X.X.X.zip<)
+        content = re.sub(
+            r'>repository\.malyslon-[^<]+\.zip<',
+            f'>{new_zip_path}<',
+            content
+        )
+
+        # 3. Aktualizuje text verze na viditelném tlačítku (vX.X.X .ZIP)
         content = re.sub(
             r'\(v\d+(?:\.\d+)* \.ZIP\)',
             f'(v{repo_version} .ZIP)',
