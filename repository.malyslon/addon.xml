@@ -3,7 +3,7 @@
     <extension point="xbmc.addon.repository" name="MalyslonRepo">
         <dir>
             <info compressed="false">https://jencek007.github.io/repository.malyslon/zips/addons.xml</info>
-            <checksum>jencek007.github.io/repository.malyslon/zips/addons.xml.md5</checksum>
+            <checksum>https://jencek007.github.io/repository.malyslon/zips/addons.xml.md5</checksum>
             <datadir zip="true">https://jencek007.github.io/repository.malyslon/zips/</datadir>
         </dir>
     </extension>
