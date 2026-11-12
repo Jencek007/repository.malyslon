@@ -43,7 +43,7 @@ class KodiRepoGenerator:
         # 5. Aktualizovat odkaz a verzi v index.html
         self._update_index_html(addons)
 
-        print("\n✅ Vše hotovo! Složka 'zips' a 'index.html' byly úspěšně aktualizovány.")
+        print("\n✅ Vše hotovo! Složka 'zips', 'repository.malyslon' a 'index.html' byly úspěšně aktualizovány.")
 
     def _find_addons(self):
         addons = []
@@ -104,8 +104,8 @@ class KodiRepoGenerator:
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
             for root, _, files in os.walk(addon_dir):
                 for file in files:
-                    # Ignorovat git a dočasné soubory uvnitř doplňku
-                    if any(x in root or x in file for x in [".git", ".DS_Store", "thumbs.db"]):
+                    # Ignorovat git, dočasné soubory a případné staré ZIPy uvnitř složky doplňku
+                    if any(x in root or x in file for x in [".git", ".DS_Store", "thumbs.db"]) or file.endswith(".zip"):
                         continue
                     full_path = os.path.join(root, file)
                     # V ZIPu musí být zachována struktura začínající názvem složky doplňku
@@ -119,6 +119,17 @@ class KodiRepoGenerator:
                 shutil.copy(src, os.path.join(addon_zip_dir, meta_file))
 
         print(f"🤐 Zabaleno do ZIPu: {zip_name}")
+
+        # Nakopírování vygenerovaného ZIPu přímo do zdrojové složky repository.malyslon
+        if addon_id == "repository.malyslon":
+            # Smazat případné starší verze ZIPu ve složce repository.malyslon
+            for existing_file in os.listdir(addon_dir):
+                if existing_file.startswith("repository.malyslon-") and existing_file.endswith(".zip"):
+                    os.remove(os.path.join(addon_dir, existing_file))
+            
+            dest_path = os.path.join(addon_dir, zip_name)
+            shutil.copy2(zip_path, dest_path)
+            print(f"📋 Zkopírováno do složky doplňku: {dest_path}")
 
     def _update_index_html(self, addons):
         if not os.path.exists(self.index_html_path):
@@ -139,10 +150,11 @@ class KodiRepoGenerator:
         with open(self.index_html_path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Aktualizuje odkaz href="zips/repository.malyslon/repository.malyslon-X.X.X.zip"
-        new_zip_path = f"zips/repository.malyslon/repository.malyslon-{repo_version}.zip"
+        # Aktualizuje odkaz na href="repository.malyslon/repository.malyslon-X.X.X.zip"
+        # (zvládne přepsat i starší formát obsahující 'zips/')
+        new_zip_path = f"repository.malyslon/repository.malyslon-{repo_version}.zip"
         content = re.sub(
-            r'href="zips/repository\.malyslon/repository\.malyslon-[^"]+\.zip"',
+            r'href="(?:zips/)?repository\.malyslon/repository\.malyslon-[^"]+\.zip"',
             f'href="{new_zip_path}"',
             content
         )
@@ -157,7 +169,7 @@ class KodiRepoGenerator:
         with open(self.index_html_path, "w", encoding="utf-8") as f:
             f.write(content)
 
-        print(f"🌐 Aktualizován soubor index.html na verzi v{repo_version}")
+        print(f"🌐 Aktualizován soubor index.html na verzi v{repo_version} ({new_zip_path})")
 
 if __name__ == "__main__":
     generator = KodiRepoGenerator()
