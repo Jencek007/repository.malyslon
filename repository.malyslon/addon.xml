@@ -11,5 +11,9 @@
         <summary>My personal Kodi repository</summary>
         <description>Osobní Kodi repozitář Malý slon</description>
         <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
     </extension>
 </addon>
