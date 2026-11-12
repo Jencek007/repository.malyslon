@@ -73,10 +73,16 @@ class KodiRepoGenerator:
                 root.append(tree.getroot())
             except Exception as e:
                 print(f"⚠️ Selhalo vložení XML z {addon_dir}: {e}")
-        
+
         tree = ET.ElementTree(root)
         ET.indent(tree, space="    ", level=0)
-        tree.write(self.addons_xml_path, encoding="utf-8", xml_declaration=True)
+
+        # Vynucení unixových konců řádků (\n), aby GitHub při uploadu nezměnil MD5 otisk
+        xml_str = ET.tostring(root, encoding="unicode")
+        with open(self.addons_xml_path, "w", encoding="utf-8", newline="\n") as f:
+            f.write('<?xml version="1.0" encoding="utf-8"?>\n')
+            f.write(xml_str)
+
         print(f"📝 Vytvořen soubor: {self.addons_xml_path}")
 
     def _create_md5(self):
