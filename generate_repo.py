@@ -7,7 +7,7 @@ import xml.etree.ElementTree as ET
 
 class KodiRepoGenerator:
     def __init__(self):
-        # Skript pracuje v adresáři, kde je spuštěn
+        # Skript pracuje v adresáři, kde je spuštěn (root repozitáře)
         self.root_dir = os.path.dirname(os.path.abspath(__file__))
         self.zips_dir = os.path.join(self.root_dir, "zips")
         self.addons_xml_path = os.path.join(self.zips_dir, "addons.xml")
@@ -36,14 +36,14 @@ class KodiRepoGenerator:
         # 3. Vytvořit MD5 hash
         self._create_md5()
 
-        # 4. Zabalit doplňky do ZIPů uvnitř složky zips/
+        # 4. Zabalit doplňky do ZIPů uvnitř složky zips/ (a repozitář do rootu)
         for addon_id, addon_dir, version in addons:
             self._create_zip(addon_id, addon_dir, version)
 
         # 5. Aktualizovat odkaz a verzi v index.html
         self._update_index_html(addons)
 
-        print("\n✅ Vše hotovo! Složka 'zips', 'repository.malyslon' a 'index.html' byly úspěšně aktualizovány.")
+        print("\n✅ Vše hotovo! Složka 'zips', root repozitáře a 'index.html' byly úspěšně aktualizovány.")
 
     def _find_addons(self):
         addons = []
@@ -69,15 +69,13 @@ class KodiRepoGenerator:
         for _, addon_dir, _ in addons:
             addon_xml_path = os.path.join(addon_dir, "addon.xml")
             try:
-                # Načtení a vložení jednotlivých addon.xml do jednoho velkého souboru
                 tree = ET.parse(addon_xml_path)
                 root.append(tree.getroot())
             except Exception as e:
                 print(f"⚠️ Selhalo vložení XML z {addon_dir}: {e}")
         
-        # Uložení spojeného XML do složky zips
         tree = ET.ElementTree(root)
-        ET.indent(tree, space="    ", level=0) # Pěkné formátování pro lidi
+        ET.indent(tree, space="    ", level=0)
         tree.write(self.addons_xml_path, encoding="utf-8", xml_declaration=True)
         print(f"📝 Vytvořen soubor: {self.addons_xml_path}")
 
@@ -97,22 +95,18 @@ class KodiRepoGenerator:
         zip_name = f"{addon_id}-{version}.zip"
         zip_path = os.path.join(addon_zip_dir, zip_name)
         
-        # Přepsat starý ZIP novým
         if os.path.exists(zip_path):
             os.remove(zip_path)
 
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zipf:
             for root, _, files in os.walk(addon_dir):
                 for file in files:
-                    # Ignorovat git, dočasné soubory a případné staré ZIPy uvnitř složky doplňku
                     if any(x in root or x in file for x in [".git", ".DS_Store", "thumbs.db"]) or file.endswith(".zip"):
                         continue
                     full_path = os.path.join(root, file)
-                    # V ZIPu musí být zachována struktura začínající názvem složky doplňku
                     relative_path = os.path.relpath(full_path, os.path.dirname(addon_dir))
                     zipf.write(full_path, relative_path)
                     
-        # Zkopírování doprovodných souborů (ikona, fanart, addon.xml) vedle ZIPu pro Kodi
         for meta_file in ["addon.xml", "icon.png", "fanart.jpg"]:
             src = os.path.join(addon_dir, meta_file)
             if os.path.exists(src):
@@ -120,23 +114,22 @@ class KodiRepoGenerator:
 
         print(f"🤐 Zabaleno do ZIPu: {zip_name}")
 
-        # Nakopírování vygenerovaného ZIPu přímo do zdrojové složky repository.malyslon
+        # Nakopírování vygenerovaného ZIPu přímo do rootu repozitáře (vedle index.html)
         if addon_id == "repository.malyslon":
-            # Smazat případné starší verze ZIPu ve složce repository.malyslon
-            for existing_file in os.listdir(addon_dir):
+            # Smazat případné starší verze ZIPu v rootu
+            for existing_file in os.listdir(self.root_dir):
                 if existing_file.startswith("repository.malyslon-") and existing_file.endswith(".zip"):
-                    os.remove(os.path.join(addon_dir, existing_file))
+                    os.remove(os.path.join(self.root_dir, existing_file))
             
-            dest_path = os.path.join(addon_dir, zip_name)
+            dest_path = os.path.join(self.root_dir, zip_name)
             shutil.copy2(zip_path, dest_path)
-            print(f"📋 Zkopírováno do složky doplňku: {dest_path}")
+            print(f"📋 Zkopírováno do rootu repozitáře: {dest_path}")
 
     def _update_index_html(self, addons):
         if not os.path.exists(self.index_html_path):
             print("⚠️ Soubor index.html nebyl nalezen, přeskakuji jeho aktualizaci.")
             return
 
-        # Najde verzi pro hlavní repozitář 'repository.malyslon'
         repo_version = None
         for addon_id, _, version in addons:
             if addon_id == "repository.malyslon":
@@ -150,11 +143,11 @@ class KodiRepoGenerator:
         with open(self.index_html_path, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Aktualizuje odkaz na href="repository.malyslon/repository.malyslon-X.X.X.zip"
-        # (zvládne přepsat i starší formát obsahující 'zips/')
-        new_zip_path = f"repository.malyslon/repository.malyslon-{repo_version}.zip"
+        # Aktualizuje odkaz přímo na soubor v rootu: href="repository.malyslon-X.X.X.zip"
+        # (zvládne přepsat i předchozí verze s 'zips/' nebo 'repository.malyslon/')
+        new_zip_path = f"repository.malyslon-{repo_version}.zip"
         content = re.sub(
-            r'href="(?:zips/)?repository\.malyslon/repository\.malyslon-[^"]+\.zip"',
+            r'href="(?:zips/)?(?:repository\.malyslon/)?repository\.malyslon-[^"]+\.zip"',
             f'href="{new_zip_path}"',
             content
         )
