@@ -1,9 +1,12 @@
+V4.0.14 (2026.11.12)
+-Change size, pos in the VideosOSD player buttons
+-Add label for actual sub language under the sub button
+
 V4.0.10
 - Add date to Home / Header
 - Add Sub button to the VideoOSD control buttons
 - Change color, size, pos in the VideosOSD player buttons
 - Remove Close VideoOSD button and change to onclick
-
 
 V3.0.3
 - Add chapter indicators to the progress bar
