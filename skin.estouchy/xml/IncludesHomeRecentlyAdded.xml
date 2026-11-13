@@ -31,9 +31,9 @@
 					<posy>0</posy>
 					<width>$PARAM[panel-width]</width>
 					<height>660</height>
-					<onleft>1000</onleft>
+					<onleft>9000</onleft>
 					<onright>2100</onright>
-					<onup>2001</onup>
+					<onup>9010</onup>
 					<ondown>2001</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
@@ -124,9 +124,9 @@
 					<posy>0</posy>
 					<width>$PARAM[panel-width]</width>
 					<height>660</height>
-					<onleft>1000</onleft>
+					<onleft>9000</onleft>
 					<onright>2200</onright>
-					<onup>2002</onup>
+					<onup>9010</onup>
 					<ondown>2002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>
@@ -242,9 +242,9 @@
 					<posy>0</posy>
 					<width>$PARAM[panel-width]</width>
 					<height>660</height>
-					<onleft>1000</onleft>
+					<onleft>9000</onleft>
 					<onright>2300</onright>
-					<onup>2003</onup>
+					<onup>9010</onup>
 					<ondown>2003</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol></pagecontrol>
@@ -334,9 +334,9 @@
 					<posy>0</posy>
 					<width>$PARAM[panel-width]</width>
 					<height>660</height>
-					<onleft>1000</onleft>
+					<onleft>9000</onleft>
 					<onright>2200</onright>
-					<onup>2002</onup>
+					<onup>9010</onup>
 					<ondown>2002</ondown>
 					<viewtype label="535">list</viewtype>
 					<pagecontrol>60</pagecontrol>

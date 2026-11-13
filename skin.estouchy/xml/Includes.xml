@@ -828,7 +828,7 @@
 				<width>500</width>
 				<height>760</height>
 				<onleft>9000</onleft>
-				<onright>9003</onright>
+				<onright>2010</onright>
 				<onup>9002</onup>
 				<ondown>9002</ondown>
 				<scrolltime>300</scrolltime>
