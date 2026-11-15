@@ -22,7 +22,7 @@
 			<visible>String.IsEqual(Skin.AspectRatio,4:3) + Control.IsVisible(550)</visible>
 		</control>
 		<control type="panel" id="550">
-			<visible>Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games)</visible>
+			<visible>Container.Content(Videos) | Container.Content(Movies) | Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums) | Container.Content(Songs) | Container.Content(Addons) | Container.Content(Games)</visible>
 			<posx>120</posx>
 			<posy>120</posy>
 			<width>$PARAM[panel-width]</width>

@@ -435,6 +435,9 @@
 				</item>
 				<item>
 					<label>31202</label>
+					<onclick condition="Control.IsVisible(50)">SetFocus(50)</onclick>
+					<onclick condition="Control.IsVisible(500)">SetFocus(500)</onclick>
+					<onclick condition="Control.IsVisible(550)">SetFocus(550)</onclick>
 					<onclick>Container.NextViewMode</onclick>
 					<icon>icon_button_view.png</icon>
 					<visible>![Window.IsVisible(TVChannels) | Window.IsVisible(RadioChannels) | Window.IsVisible(TVGuide) | Window.IsVisible(RadioGuide) | Window.IsVisible(TVRecordings) | Window.IsVisible(RadioRecordings) | Window.IsVisible(TVTimers) | Window.IsVisible(RadioTimers) | Window.IsVisible(TVTimerRules) | Window.IsVisible(RadioTimerRules) | Window.IsVisible(TVSearch) | Window.IsVisible(RadioSearch) | Window.IsVisible(MusicOSD) | Window.IsVisible(VideoOSD) | Window.IsVisible(MusicPlaylist) | Window.IsVisible(VideoPlaylist) | Window.IsVisible(MusicPlaylistEditor)]</visible>
