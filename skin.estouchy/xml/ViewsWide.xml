@@ -27,10 +27,10 @@
 			<posy>120</posy>
 			<width>$PARAM[panel-width]</width>
 			<height>720</height>
-			<onleft>2</onleft>
+			<onleft>9000</onleft>
 			<onright>60</onright>
 			<onup>550</onup>
-			<ondown>550</ondown>
+			<ondown>9002</ondown>
 			<viewtype label="31030">wide</viewtype>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime>200</scrolltime>

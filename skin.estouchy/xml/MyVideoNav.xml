@@ -14,7 +14,7 @@
 			<include>MediaWindowTitleCommons</include>
 			<label>$LOCALIZE[3]$INFO[Container.FolderName, - ]</label>
 		</control>
-		<control type="group">
+		<control type="group" id="50">
 			<include>Window_OpenClose_Animation_Zoom</include>
 			<include content="Thumbnail" condition="String.IsEqual(Skin.AspectRatio,16:9)"> <!-- view id = 50 -->
 				<param name="panel-width" value="1530"/>

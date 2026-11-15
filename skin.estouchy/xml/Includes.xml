@@ -339,7 +339,7 @@
 		<font>font24_title</font>
 		<textcolor>white</textcolor>
 	</include>
-	<include name="ScrollBarCommons">
+		<include name="ScrollBarCommons">
 		<control type="group">
 			<include>Window_OpenClose_Animation</include>
 			<posx>40r</posx>
@@ -358,8 +358,8 @@
 				<texturesliderbarfocus colordiffuse="blue">white.png</texturesliderbarfocus>
 				<textureslidernib>blank.png</textureslidernib>
 				<textureslidernibfocus>blank.png</textureslidernibfocus>
-				<onleft>60</onleft>
-				<onright>60</onright>
+				<onleft>50,500,550</onleft>
+				<onright>9002</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
@@ -449,9 +449,11 @@
 				<item>
 					<label>5</label>
 					<onclick condition="String.IsEmpty(Window(Home).Property(PopupMenuVisible))">SetProperty(PopupMenuVisible,Show,Home)</onclick>
+					<onclick condition="String.IsEmpty(Window(Home).Property(PopupMenuVisible))">SetFocus(9003)</onclick>
 					<onclick condition="!String.IsEmpty(Window(Home).Property(PopupMenuVisible))">ClearProperty(PopupMenuVisible,Home)</onclick>
 					<icon>icon_button_settings.png</icon>
 				</item>
+
 			</content>
 		</control>
 	</include>
@@ -469,7 +471,11 @@
 		<height>120</height>
 		<onleft>9002</onleft>
 		<onright>9002</onright>
-		<onup>9001</onup>
+		<onup condition="!String.IsEmpty(Window(Home).Property(PopupMenuVisible))">9003</onup>
+		<onup condition="Window.IsVisible(Home)">9001</onup>
+		<onup condition="!Window.IsVisible(Home) + String.IsEmpty(Window(Home).Property(PopupMenuVisible)) + Control.IsVisible(50)">50</onup>
+		<onup condition="!Window.IsVisible(Home) + String.IsEmpty(Window(Home).Property(PopupMenuVisible)) + Control.IsVisible(500)">500</onup>
+		<onup condition="!Window.IsVisible(Home) + String.IsEmpty(Window(Home).Property(PopupMenuVisible)) + Control.IsVisible(550)">550</onup>
 		<ondown>20</ondown>
 		<scrolltime>300</scrolltime>
 		<orientation>Horizontal</orientation>
@@ -723,6 +729,10 @@
 				<posy>80</posy>
 				<width>100</width>
 				<height>800</height>
+				<onright condition="Control.IsVisible(50)">50</onright>
+				<onright condition="Control.IsVisible(500)">500</onright>
+				<onright condition="Control.IsVisible(550)">550</onright>
+				<ondown>9002</ondown>
 				<itemlayout width="100" height="100">
 					<control type="image">
 						<posx>10</posx>
@@ -1063,15 +1073,15 @@
 					<height>$PARAM[panel-height]</height>
 					<texture>dialog_back.png</texture>
 				</control>
-				<control type="grouplist">
+				<control type="grouplist" id="9003">
 					<posx>0</posx>
 					<posy>$PARAM[panel-posy]</posy>
 					<width>350</width>
 					<height>640</height>
-					<onleft>9000</onleft>
-					<onright>50</onright>
-					<onup>9000</onup>
-					<ondown>9000</ondown>
+					<onleft>9002</onleft>
+					<onright>50,500,550</onright>
+					<onup>9003</onup>
+					<ondown>9002</ondown>
 					<itemgap>0</itemgap>
 					<include condition="Window.IsVisible(AddonBrowser)">AddonsMenu</include>
 					<include condition="Window.IsVisible(EventLog)">EventLogMenu</include>
@@ -2503,7 +2513,10 @@
 			<texturesliderbarfocus colordiffuse="blue">white.png</texturesliderbarfocus>
 			<textureslidernib>blank.png</textureslidernib>
 			<textureslidernibfocus>blank.png</textureslidernibfocus>
-			<onleft>9000</onleft>
+			<onleft>50,500,550</onleft>
+			<onright>9002</onright>
+			<ondown>60</ondown>
+			<onup>60</onup>
 			<showonepage>false</showonepage>
 			<orientation>vertical</orientation>
 			<animation effect="fade" time="150">Visible</animation>

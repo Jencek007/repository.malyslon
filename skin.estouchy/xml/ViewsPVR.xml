@@ -30,6 +30,8 @@
 			<height>540</height>
 			<onleft>2</onleft>
 			<onright>60</onright>
+			<onup>500</onup>
+			<ondown>9002</ondown>
 			<viewtype label="535">list</viewtype>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime>200</scrolltime>
