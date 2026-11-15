@@ -1,4 +1,8 @@
 V4.0.15 (2026.11.12)
+-Adding remote control support 
+
+
+V4.0.15 (2026.11.12)
 -Change size, pos in the VideosOSD player buttons
 -Add label for actual sub language under the sub button
 -Change moving in the home.xml with keyboard

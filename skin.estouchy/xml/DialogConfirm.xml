@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<defaultcontrol always="true">10</defaultcontrol>
 	<onload condition="Window.IsVisible(yesnodialog)">SetFocus(10)</onload>
 	<coordinates>
 		<posx>290</posx>
@@ -52,7 +53,7 @@
 			<height>10</height>
 			<info>System.Progressbar</info>
 		</control>
-		<include condition="!Window.IsVisible(yesnodialog)">YesNoExtendedButtons</include>
-		<include condition="Window.IsVisible(yesnodialog)">YesNoDefaultButtons</include>
+		<include condition="!Window.IsVisible(confirmdialog)">YesNoExtendedButtons</include>
+		<include condition="Window.IsVisible(confirmdialog)">YesNoDefaultButtons</include>
 	</controls>
 </window>
