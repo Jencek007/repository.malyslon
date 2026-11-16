@@ -1,3 +1,9 @@
+V4.0.22 (2026.11.16)
+-change fanart and icons
+-update strings in En-GB
+-some adds in VideoOSD
+
+
 V4.0.18 (2026.11.15)
 -Adding remote control support 
 

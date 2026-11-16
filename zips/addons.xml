@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <addons>
-    <addon id="repository.malyslon" name="MalyslonRepo" version="1.0.5" provider-name="Jencek007">
+    <addon id="repository.malyslon" name="MalyslonRepo" version="1.0.6" provider-name="Jencek007">
         <extension point="xbmc.addon.repository" name="MalyslonRepo">
             <dir>
                 <info compressed="false">https://jencek007.github.io/repository.malyslon/zips/addons.xml</info>
@@ -9,8 +9,8 @@
             </dir>
         </extension>
         <extension point="xbmc.addon.metadata">
-            <summary>My personal Kodi repository</summary>
-            <description>Osobní Kodi repozitář Malý slon</description>
+            <summary>Personal Kodi repository malyslon</summary>
+            <description lang="cs">Osobní Kodi repozitář malyslon</description>
             <platform>all</platform>
             <assets>
                 <icon>icon.png</icon>
@@ -18,7 +18,7 @@
             </assets>
         </extension>
     </addon>
-    <addon id="skin.estouchy" version="4.0.19" name="Estouchy" provider-name="Team Kodi, Jencek007">
+    <addon id="skin.estouchy" version="4.0.22" name="Estouchy" provider-name="Team Kodi, Jencek007">
         <requires>
             <import addon="xbmc.gui" version="5.17.0" />
         </requires>

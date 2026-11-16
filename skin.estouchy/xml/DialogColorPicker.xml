@@ -123,7 +123,7 @@
 			<width>880</width>
 			<height>35</height>
 			<align>left</align>
-			<font>font14</font>
+			<font>font16</font>
 			<label>[COLOR blue]$LOCALIZE[737]: [/COLOR]$INFO[Container(6).ListItem.Label, , - ]$INFO[Container(6).ListItem.Label2,#,]</label>
 		</control>
 		<control type="grouplist" id="9000">

@@ -5,7 +5,12 @@
 		<font>
 			<name>font13</name>
 			<filename>NotoSans-Regular.ttf</filename>
-			<size>24</size>
+			<size>13</size>
+		</font>
+		<font>
+			<name>font14</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>14</size>
 		</font>
 		<font>
 			<name>font16</name>

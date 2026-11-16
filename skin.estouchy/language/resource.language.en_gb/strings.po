@@ -24,6 +24,10 @@ msgctxt "Addon Description"
 msgid "Skin designed to be used on touchscreen devices like tablets and smartphones"
 msgstr ""
 
+msgctxt "#31001"
+msgid "Actual Time"
+msgstr ""
+
 msgctxt "#31002"
 msgid "Audio Settings"
 msgstr ""
@@ -159,7 +163,11 @@ msgctxt "#31046"
 msgid "Play speed"
 msgstr ""
 
-#empty strings from id 31047 to 31048
+msgctxt "#31047"
+msgid "Battery"
+msgstr ""
+
+#empty strings 31048
 
 msgctxt "#31049"
 msgid "End Time"
