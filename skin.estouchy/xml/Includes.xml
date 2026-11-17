@@ -1661,7 +1661,7 @@
 			<height>640</height>
 			<itemgap>-1</itemgap>
 			<onleft>3</onleft>
-			<onright>3</onright>
+			<onright>9002</onright>
 			<onup>5</onup>
 			<ondown>5</ondown>
 		</control>
@@ -1880,7 +1880,7 @@
 			<onup>100</onup>
 			<ondown>9002</ondown>
 			<onleft>9</onleft>
-			<onright>60</onright>
+			<onright>9002</onright>
 			<visible>Skin.String(SkinSettings,1)</visible>
 			<control type="radiobutton" id="102">
 				<description>Show LiveTV</description>
@@ -2063,7 +2063,7 @@
 			<onup>200</onup>
 			<ondown>9002</ondown>
 			<onleft>9</onleft>
-			<onright>60</onright>
+			<onright>9002</onright>
 			<visible>Skin.String(SkinSettings,2)</visible>
 			<control type="button" id="202">
 				<description>Home Addon Button</description>
@@ -2301,7 +2301,7 @@
 			<onup>200</onup>
 			<ondown>9002</ondown>
 			<onleft>9</onleft>
-			<onright>60</onright>
+			<onright>9002</onright>
 			<visible>Skin.String(SkinSettings,3)</visible>
 			<control type="radiobutton" id="115">
 				<description>Use custom background</description>

@@ -25,7 +25,6 @@
 				<height>720</height>
 				<itemgap>-1</itemgap>
 				<onleft>9</onleft>
-				<onright>9</onright>
 				<onup>2</onup>
 				<ondown>2</ondown>
 				<control type="button" id="91">
@@ -40,6 +39,7 @@
 					<pulseonselect>false</pulseonselect>
 					<label>31548</label>
 					<textoffsetx>20</textoffsetx>
+					<onright>100</onright>
 					<onfocus>Skin.SetString(SkinSettings,1)</onfocus>
 				</control>
 				<control type="button" id="92">
@@ -54,6 +54,7 @@
 					<pulseonselect>false</pulseonselect>
 					<label>31549</label>
 					<textoffsetx>20</textoffsetx>
+					<onright>200</onright>
 					<onfocus>Skin.SetString(SkinSettings,2)</onfocus>
 				</control>
 				<control type="button" id="93">
@@ -68,6 +69,7 @@
 					<pulseonselect>false</pulseonselect>
 					<label>31550</label>
 					<textoffsetx>20</textoffsetx>
+					<onright>300</onright>
 					<onfocus>Skin.SetString(SkinSettings,3)</onfocus>
 				</control>
 			</control>
@@ -91,6 +93,7 @@
 		<control type="panel" id="9002">
 			<include>VisibleFadeEffect</include>
 			<include>BottomMenuLayout</include>
+			<onup>9</onup>
 			<content>
 				<item>
 					<label>31200</label>

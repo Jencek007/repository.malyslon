@@ -145,6 +145,7 @@
 		<control type="panel" id="9002">
 			<include>VisibleFadeEffect</include>
 			<include>BottomMenuLayout</include>
+			<onup>5</onup>
 			<content>
 				<item>
 					<label>31200</label>

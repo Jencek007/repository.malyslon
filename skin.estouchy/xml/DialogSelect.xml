@@ -50,8 +50,8 @@
 			<height>600</height>
 			<onup>3</onup>
 			<ondown>3</ondown>
-			<onleft>5</onleft>
-			<onright>61</onright>
+			<onleft>9000</onleft>
+			<onright>60</onright>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime>200</scrolltime>
 			<itemlayout height="60" width="680">
@@ -99,7 +99,7 @@
 			<textureslidernib>blank.png</textureslidernib>
 			<textureslidernibfocus>blank.png</textureslidernibfocus>
 			<onleft>3</onleft>
-			<onright>3</onright>
+			<onright>9000</onright>
 			<ondown>60</ondown>
 			<onup>60</onup>
 			<showonepage>false</showonepage>
@@ -115,7 +115,7 @@
 			<height>600</height>
 			<onup>6</onup>
 			<ondown>6</ondown>
-			<onleft>5</onleft>
+			<onleft>9000</onleft>
 			<onright>61</onright>
 			<pagecontrol>61</pagecontrol>
 			<scrolltime>200</scrolltime>
@@ -199,7 +199,7 @@
 			<textureslidernib>blank.png</textureslidernib>
 			<textureslidernibfocus>blank.png</textureslidernibfocus>
 			<onleft>6</onleft>
-			<onright>6</onright>
+			<onright>9000</onright>
 			<ondown>61</ondown>
 			<onup>61</onup>
 			<showonepage>false</showonepage>
@@ -218,8 +218,10 @@
 			<orientation>horizontal</orientation>
 			<onleft>9000</onleft>
 			<onright>9000</onright>
-			<onup>9000</onup>
-			<ondown>9000</ondown>
+			<onup condition="Control.IsVisible(6)">6</onup>
+			<onup condition="!Control.IsVisible(6)">3</onup>
+			<ondown condition="Control.IsVisible(6)">6</ondown>
+			<ondown condition="!Control.IsVisible(6)">3</ondown>
 			<control type="button" id="5">
 				<description>Get more button</description>
 				<width>200</width>
