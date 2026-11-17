@@ -365,7 +365,7 @@
 				</control>
 			</control>
 		</control>
-				<control type="group">  <!-- controls buttons -->
+		<control type="group">  <!-- controls buttons -->
 			<posy>Center</posy> 
 			<top>370</top>
 			<control type="grouplist" id="200">
@@ -387,6 +387,7 @@
 						<width>125</width>
 						<height>125</height>
 						<onright>202</onright>
+						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_previous.png</texturefocus>
 						<texturenofocus colordiffuse="8049ADEE">osd_previous.png</texturenofocus>
 						<onclick>PlayerControl(Previous)</onclick>
@@ -403,6 +404,7 @@
 						<height>125</height>
 						<onleft>201</onleft>
 						<onright>203</onright>
+						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_rewind.png</texturefocus>
 						<texturenofocus colordiffuse="8049ADEE">osd_rewind.png</texturenofocus>
 						<onclick>PlayerControl(Rewind)</onclick>
@@ -415,6 +417,7 @@
 					<height>260</height>
 					<onleft>202</onleft>
 					<onright>204</onright>
+
 					<texturefocus colordiffuse="FF48ADEE">osd_pause.png</texturefocus>
 					<texturenofocus colordiffuse="8049ADEE">osd_pause.png</texturenofocus>
 					<alttexturefocus colordiffuse="FF49ADEE">osd_play.png</alttexturefocus>
@@ -433,6 +436,7 @@
 						<height>125</height>
 						<onleft>203</onleft>
 						<onright>205</onright>
+						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_forward.png</texturefocus>
 						<texturenofocus colordiffuse="8049ADEE">osd_forward.png</texturenofocus>
 						<onclick>PlayerControl(Forward)</onclick>
@@ -450,6 +454,7 @@
 						<height>125</height>
 						<onleft>204</onleft>
 						<onright>206</onright>
+						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_next.png</texturefocus>
 						<texturenofocus colordiffuse="8049ADEE">osd_next.png</texturenofocus>
 						<onclick>PlayerControl(Next)</onclick>
@@ -466,6 +471,7 @@
 						<height>125</height>
 						<onleft>205</onleft>
 						<onright>700</onright>
+						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_stop.png</texturefocus>
 						<texturenofocus colordiffuse="8049ADEE">osd_stop.png</texturenofocus>
 						<onclick>PlayerControl(Stop)</onclick>
@@ -485,6 +491,7 @@
 						<height>215</height>
 						<onleft>206</onleft>
 						<onright>208</onright>
+						<ondown>9002</ondown>	
 						<texturefocus />
 						<texturenofocus />
 						<font>font80_title</font>
@@ -571,6 +578,8 @@
 						<width>150</width>
 						<height>150</height>
 						<onleft>700</onleft>
+						<onright>700</onright>
+						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_record.png</texturefocus>
 						<texturenofocus>osd_record.png</texturenofocus>
 						<alttexturefocus colordiffuse="red">osd_record.png</alttexturefocus>
