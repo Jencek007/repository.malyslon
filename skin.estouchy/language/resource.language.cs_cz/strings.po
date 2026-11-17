@@ -147,7 +147,7 @@ msgid "Play speed"
 msgstr "Rychlost přehrávání"
 
 msgctxt "#31047"
-msgid "Battery %"
+msgid "Battery"
 msgstr "Baterie"
 
 msgctxt "#31049"
