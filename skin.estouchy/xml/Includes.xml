@@ -450,13 +450,12 @@
 					<visible>Window.IsVisible(TVChannels) | Window.IsVisible(RadioChannels) | Window.IsVisible(TVGuide) | Window.IsVisible(RadioGuide) | Window.IsVisible(TVRecordings) | Window.IsVisible(RadioRecordings) | Window.IsVisible(TVTimers) | Window.IsVisible(RadioTimers) | Window.IsVisible(TVTimerRules) | Window.IsVisible(RadioTimerRules) | Window.IsVisible(TVSearch) | Window.IsVisible(RadioSearch)</visible>
 				</item>
 				<item>
-					<label>5</label>
-					<onclick condition="String.IsEmpty(Window(Home).Property(PopupMenuVisible))">SetProperty(PopupMenuVisible,Show,Home)</onclick>
-					<onclick condition="String.IsEmpty(Window(Home).Property(PopupMenuVisible))">SetFocus(9003)</onclick>
-					<onclick condition="!String.IsEmpty(Window(Home).Property(PopupMenuVisible))">ClearProperty(PopupMenuVisible,Home)</onclick>
-					<icon>icon_button_settings.png</icon>
+				    <label>5</label>
+    				<onclick condition="String.IsEmpty(Window(Home).Property(PopupMenuVisible))">SetProperty(PopupMenuVisible,Show,Home)</onclick>
+    				<onclick condition="!String.IsEmpty(Window(Home).Property(PopupMenuVisible))">ClearProperty(PopupMenuVisible,Home)</onclick>
+    				<onclick>AlarmClock(focusmenu,SetFocus(9003),00:00,silent)</onclick>
+    				<icon>icon_button_settings.png</icon>
 				</item>
-
 			</content>
 		</control>
 	</include>
@@ -1081,10 +1080,11 @@
 					<posy>$PARAM[panel-posy]</posy>
 					<width>350</width>
 					<height>640</height>
+					<orientation>vertical</orientation>
 					<onleft>9002</onleft>
-					<onright>50,500,550</onright>
+					<onright>9002</onright>
 					<onup>9003</onup>
-					<ondown>9002</ondown>
+					<ondown>9003</ondown>
 					<itemgap>0</itemgap>
 					<include condition="Window.IsVisible(AddonBrowser)">AddonsMenu</include>
 					<include condition="Window.IsVisible(EventLog)">EventLogMenu</include>
@@ -2586,63 +2586,63 @@
 		</control>
 	</include>
 	<include name="VideoOSDMenu">
-		<control type="button">
+		<control type="button" id="9010">
 			<label>19019</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(PVROSDChannels)</onclick>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
-		<control type="button">
+		<control type="button" id="9011">
 			<label>19222</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(pvrchannelguide)</onclick>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
-		<control type="button">
+		<control type="button" id="9012">
 			<label>31358</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(Teletext)</onclick>
 			<visible>VideoPlayer.Content(LiveTV)</visible>
 		</control>
-		<control type="button">
+		<control type="button" id="9013">
 			<label>13395</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(osdvideosettings)</onclick>
 		</control>
-		<control type="button">
+		<control type="button" id="9014">
 			<label>31002</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(osdaudiosettings)</onclick>
 		</control>
-		<control type="button">
+		<control type="button" id="9015">
 			<label>24133</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(osdsubtitlesettings)</onclick>
 		</control>
-		<control type="button">
+		<control type="button" id="9016">
 			<label>298</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ActivateWindow(videobookmarks)</onclick>
 		</control>
-		<control type="button">
+		<control type="button" id="9017">
 			<label>$LOCALIZE[486]$INFO[Playlist.Repeat, : ]</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>PlayerControl(Repeat)</onclick>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
-		<control type="button">
+		<control type="button" id="9018">
 			<label>$LOCALIZE[590]$INFO[Playlist.Random, : ]</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>PlayerControl(Random)</onclick>
 			<visible>!VideoPlayer.Content(LiveTV)</visible>
 		</control>
-		<control type="button">
+		<control type="button" id="9019">
 			<label>31355</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>PlayerControl(ShowVideoMenu)</onclick>
 			<visible>VideoPlayer.HasMenu + !VideoPlayer.Content(LiveTV)</visible>
 		</control>
-		<control type="button">
+		<control type="button" id="9020">
 			<label>31015</label>
 			<include>MenuButtonCommonValues</include>
 			<onclick>ClearProperty(PopupMenuVisible,Home)</onclick>

@@ -1,3 +1,8 @@
+V4.0.27 (2026.11.18)
+-navigate on keyboard
+-some change on VideoOSD
+
+
 V4.0.22 (2026.11.16)
 -change fanart and icons
 -update strings in En-GB
