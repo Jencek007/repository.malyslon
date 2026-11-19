@@ -5,7 +5,7 @@
 			<description>CloseOSD</description>
 			<posx>0</posx>
 			<posy>0</posy>
-			<include>ScreenWidth</include>
+			<width>100%</width>
 			<height>100%</height>
 			<texturenofocus></texturenofocus>
 			<texturefocus></texturefocus>
@@ -14,16 +14,20 @@
 		</control>
 		<visible>!Window.IsVisible(SliderDialog)</visible>
 		<include>VisibleFadeEffect</include>
+
+		<!-- HORNÍ LIŠTA (přes celou šířku obrazovky) -->
 		<control type="image">
 			<posx>0</posx>
 			<posy>0</posy>
-			<include>ScreenWidth</include>
+			<width>100%</width>
 			<height>80</height>
 			<texture border="0,0,0,2">header.png</texture>
 		</control>
+
+		<!-- 1. LEVÁ ČÁST (ukotvená k levému okraji) -->
 		<control type="button">
 			<description>Home Button</description>
-			<posx>22</posx>
+			<left>22</left>
 			<posy>2</posy>
 			<width>150</width>
 			<height>75</height>
@@ -35,32 +39,47 @@
 		</control>
 		<control type="image">
 			<description>Kodi Logo</description>
-			<posx>22</posx>
+			<left>22</left>
 			<posy>16</posy>
 			<width>160</width>
 			<height>44</height>
 			<texture>special://xbmc/media/vendor_logo.png</texture>
 			<include>VisibleFadeEffect</include>
 		</control>
-		<control type="group">
-			<posx>300</posx>
+
+		<!-- 2. STŘEDOVÁ ČÁST (responzivně vycentrovaná na střed jakékoliv obrazovky) -->
+		<control type="grouplist">
+			<posx>0</posx>
 			<posy>10</posy>
+			<width>100%</width>
+			<height>70</height>
+			<align>center</align>
+			<itemgap>24</itemgap>
+			<orientation>horizontal</orientation>
 			<include>VisibleFadeEffect</include>
-			<include>16x9_xPos_Relocation</include>
 			<visible>![Window.IsVisible(busydialog) | Window.IsVisible(extendedprogressdialog) | Window.IsVisible(Notification) | Window.IsVisible(volumebar)]</visible>
-			<control type="button">
-				<description>Volume Button</description>
-				<posx>0</posx>
-				<posy>10</posy>
-				<width>40</width>
-				<height>40</height>
-				<label></label>
-				<texturenofocus colordiffuse="8049ADEE">osd_volume.png</texturenofocus>
-				<texturefocus colordiffuse="FF49ADEE">osd_volume.png</texturefocus>
-				<onclick>ActivateWindow(1112)</onclick>
-			</control>
+
+			<!-- Tlačítko hlasitosti -->
 			<control type="group">
-				<posx>64</posx>
+				<width>40</width>
+				<height>60</height>
+				<control type="button">
+					<description>Volume Button</description>
+					<posx>0</posx>
+					<posy>10</posy>
+					<width>40</width>
+					<height>40</height>
+					<label></label>
+					<texturenofocus colordiffuse="8049ADEE">osd_volume.png</texturenofocus>
+					<texturefocus colordiffuse="FF49ADEE">osd_volume.png</texturefocus>
+					<onclick>ActivateWindow(1112)</onclick>
+				</control>
+			</control>
+
+			<!-- Seekbar a časy přehrávání -->
+			<control type="group">
+				<width>552</width>
+				<height>65</height>
 				<include>VisibleFadeEffect</include>
 				<visible>!Window.IsVisible(1112)</visible>
 				<control type="label">
@@ -163,6 +182,49 @@
 				</control>
 			</control>
 		</control>
+
+		<!-- 3. PRAVÁ ČÁST (ukotvená k pravému okraji obrazovky) -->
+		<control type="grouplist">
+			<include>VisibleFadeEffect</include>
+			<right>18</right>
+			<posy>8</posy>
+			<width>300</width>
+			<height>175</height>
+			<itemgap>2</itemgap>
+			<orientation>vertical</orientation>
+			<control type="label">
+				<description>System Time</description>
+				<height>75</height>
+				<width>300</width>
+				<font>font70_title</font>
+				<textcolor>white</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[System.Time]</label>
+			</control>
+			<control type="label">
+				<description>EndTime</description>
+				<height>30</height>
+				<width>300</width>
+				<font>font25</font>
+				<textcolor>grey</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[OSDLabel5]</label>
+			</control>
+			<control type="label">
+				<description>Battery Life</description>
+				<height>30</height>
+				<width>300</width>
+				<font>font25</font>
+				<textcolor>$VAR[BatteryColor]</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[OSDLabel6]</label>
+				<visible>!String.IsEmpty(System.BatteryLevel)</visible>
+			</control>
+		</control>
+
 		<control type="image">
 			<posx>0</posx>
 			<posy>80r</posy>
@@ -207,7 +269,7 @@
 				<control type="label">
 					<posx>280</posx>
 					<posy>50</posy>
-					<width>480</width>
+					<width>780</width>
 					<height>30</height>
 					<font>font30_title</font>
 					<align>left</align>
@@ -233,7 +295,7 @@
 					<posy>120</posy>
 					<width>1200</width>
 					<height>105</height>
-					<font>font20</font>
+					<font>font24</font>
 					<textcolor>FFD0D0D0</textcolor>
 					<align>justify</align>
 					<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
@@ -242,7 +304,7 @@
 				</control>
 				<!-- JEDEN ŘÁDEK METADAT (začíná na 780px, končí nejpozději na 1240px) -->
 				<control type="label">
-					<posx>780</posx>
+					<posx>980</posx>
 					<posy>50</posy>
 					<width>460</width>
 					<height>30</height>
@@ -328,41 +390,6 @@
 					<font>font20</font>
 					<label>$VAR[OSDLabel4]</label>
 				</control>
-				<control type="label">
-					<description>Video end Time</description>
-					<posx>280r</posx>
-					<posy>55</posy>
-					<width>840</width>
-					<height>25</height>
-					<label>$VAR[OSDLabel5]</label>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font25</font>
-				</control>
-				<control type="label">
-					<description>Actual Time</description>
-					<posx>280r</posx>
-					<posy>20</posy> 
-					<width>840</width>
-					<height>25</height>
-					<label>$LOCALIZE[31001] $INFO[System.Time]</label>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font25</font>
-				</control>
-				<control type="label">
-					<description>Battery Life</description>
-					<posx>280r</posx>
-					<posy>90</posy> 
-					<width>840</width>
-					<height>25</height>
-					<label>$VAR[OSDLabel6]</label>
-					<textcolor>$VAR[BatteryColor]</textcolor>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font25</font>
-					<visible>String.Contains(System.BatteryLevel, 0) | String.Contains(System.BatteryLevel, 1) | String.Contains(System.BatteryLevel, 2) | String.Contains(System.BatteryLevel, 3) | String.Contains(System.BatteryLevel, 4) | String.Contains(System.BatteryLevel, 5) | String.Contains(System.BatteryLevel, 6) | String.Contains(System.BatteryLevel, 7) | String.Contains(System.BatteryLevel, 8) | String.Contains(System.BatteryLevel, 9)</visible>
-				</control>
 			</control>
 		</control>
 		<control type="group">  <!-- controls buttons -->
@@ -389,7 +416,7 @@
 						<onright>202</onright>
 						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_previous.png</texturefocus>
-						<texturenofocus colordiffuse="8049ADEE">osd_previous.png</texturenofocus>
+						<texturenofocus colordiffuse="5049ADEE">osd_previous.png</texturenofocus>
 						<onclick>PlayerControl(Previous)</onclick>
 					</control>
 				</control>
@@ -406,7 +433,7 @@
 						<onright>203</onright>
 						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_rewind.png</texturefocus>
-						<texturenofocus colordiffuse="8049ADEE">osd_rewind.png</texturenofocus>
+						<texturenofocus colordiffuse="5049ADEE">osd_rewind.png</texturenofocus>
 						<onclick>PlayerControl(Rewind)</onclick>
 					</control>
 				</control>
@@ -418,9 +445,9 @@
 					<onleft>202</onleft>
 					<onright>204</onright>
 					<texturefocus colordiffuse="FF48ADEE">osd_pause.png</texturefocus>
-					<texturenofocus colordiffuse="8049ADEE">osd_pause.png</texturenofocus>
+					<texturenofocus colordiffuse="5049ADEE">osd_pause.png</texturenofocus>
 					<alttexturefocus colordiffuse="FF49ADEE">osd_play.png</alttexturefocus>
-					<alttexturenofocus colordiffuse="8049ADEE">osd_play.png</alttexturenofocus>
+					<alttexturenofocus colordiffuse="5049ADEE">osd_play.png</alttexturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
 				</control>
@@ -437,7 +464,7 @@
 						<onright>205</onright>
 						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_forward.png</texturefocus>
-						<texturenofocus colordiffuse="8049ADEE">osd_forward.png</texturenofocus>
+						<texturenofocus colordiffuse="5049ADEE">osd_forward.png</texturenofocus>
 						<onclick>PlayerControl(Forward)</onclick>
 					</control>
 				</control>
@@ -455,7 +482,7 @@
 						<onright>206</onright>
 						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_next.png</texturefocus>
-						<texturenofocus colordiffuse="8049ADEE">osd_next.png</texturenofocus>
+						<texturenofocus colordiffuse="5049ADEE">osd_next.png</texturenofocus>
 						<onclick>PlayerControl(Next)</onclick>
 					</control>
 				</control>
@@ -472,33 +499,28 @@
 						<onright>700</onright>
 						<ondown>9002</ondown>
 						<texturefocus colordiffuse="FF49ADEE">osd_stop.png</texturefocus>
-						<texturenofocus colordiffuse="8049ADEE">osd_stop.png</texturenofocus>
+						<texturenofocus colordiffuse="5049ADEE">osd_stop.png</texturenofocus>
 						<onclick>PlayerControl(Stop)</onclick>
 					</control>
 				</control>
 
-				<!-- 7. SUBTITLES + KOMPLETNÍ POPIS STOPY -->
+								<!-- 7. SUBTITLES + KOMPLETNÍ POPIS STOPY -->
 				<control type="group" id="701">
 					<width>250</width>
 					<height>260</height>
 					<visible>VideoPlayer.HasSubtitles</visible>
 
-					<!-- Hlavní tlačítko titulků s ID 700 (zarovnáno na osu 130px) -->
+					<!-- Hlavní tlačítko titulků s ID 700 (125x125 vycentrované na osu 130px) -->
 					<control type="button" id="700">
-						<top>0</top>
-						<width>250</width>
-						<height>215</height>
+						<left>62</left>
+						<top>67</top>
+						<width>125</width>
+						<height>125</height>
 						<onleft>206</onleft>
 						<onright>208</onright>
 						<ondown>9002</ondown>	
-						<texturefocus />
-						<texturenofocus />
-						<font>font80_title</font>
-						<textcolor>8049ADEE</textcolor>
-						<focusedcolor>FF49ADEE</focusedcolor>
-						<align>center</align>
-						<aligny>center</aligny>
-						<label>$VAR[OSDLabel7]</label>
+						<texturefocus colordiffuse="FF49ADEE">osd_subtitle.png</texturefocus>
+						<texturenofocus colordiffuse="5049ADEE">osd_subtitle.png</texturenofocus>
 						<onclick>Action(nextsubtitle)</onclick>
 					</control>
 

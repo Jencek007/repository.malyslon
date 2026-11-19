@@ -152,7 +152,7 @@ msgstr "Baterie"
 
 msgctxt "#31049"
 msgid "End Time"
-msgstr "Čas ukončení"
+msgstr "Konec v"
 
 msgctxt "#31050"
 msgid "Sort: Ascending"

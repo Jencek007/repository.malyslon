@@ -1075,7 +1075,7 @@
 					<height>$PARAM[panel-height]</height>
 					<texture>dialog_back.png</texture>
 				</control>
-				<control type="grouplist" id="9003">
+					<control type="grouplist" id="9003">
 					<posx>0</posx>
 					<posy>$PARAM[panel-posy]</posy>
 					<width>350</width>
