@@ -10,8 +10,10 @@
 		<control type="group">
 			<posx>48</posx>
 			<posy>500r</posy>
-			<animation effect="slide" start="0,610" end="0,0" time="400" easing="out" tween="quadratic" >WindowOpen</animation>
-			<animation effect="slide" start="0,0" end="0,610" time="400" easing="in" tween="quadratic" >WindowClose</animation>
+			<animation effect="slide" start="0,610" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,610" time="400" easing="in" tween="quadratic">WindowClose</animation>
+			<!-- Zvětšení celé klávesnice o 8 % ze středu okna, aby přesně vyplnila šířku displeje -->
+			<animation effect="zoom" start="108" end="108" center="640,450" time="0" condition="true">conditional</animation>
 			<include>16x9_xPos_Relocation</include>
 			<control type="group">
 				<visible>Control.IsVisible(313)</visible>
@@ -99,79 +101,79 @@
 					<itemgap>4</itemgap>
 					<control type="button" id="100">
 						<description>(0,0) key button</description>
-						<onup>32</onup>
+						<onup>307</onup>
 						<ondown>120</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="101">
 						<description>(0,1) key button</description>
-						<onup>32</onup>
+						<onup>307</onup>
 						<ondown>121</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="102">
 						<description>(0,2) key button</description>
-						<onup>32</onup>
+						<onup>304</onup>
 						<ondown>122</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="103">
 						<description>(0,3) key button</description>
-						<onup>32</onup>
+						<onup>304</onup>
 						<ondown>123</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="104">
 						<description>(0,4) key button</description>
-						<onup>8</onup>
+						<onup>305</onup>
 						<ondown>124</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="105">
 						<description>(0,5) key button</description>
-						<onup>8</onup>
+						<onup>306</onup>
 						<ondown>125</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="106">
 						<description>(0,6) key button</description>
-						<onup>8</onup>
+						<onup>32</onup>
 						<ondown>126</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="107">
 						<description>(0,7) key button</description>
-						<onup>8</onup>
+						<onup>32</onup>
 						<ondown>127</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="108">
 						<description>(0,8) key button</description>
-						<onup>305</onup>
+						<onup>32</onup>
 						<ondown>128</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="109">
 						<description>(0,9) key button</description>
-						<onup>305</onup>
+						<onup>309</onup>
 						<ondown>129</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="110">
 						<description>(0,10) key button</description>
-						<onup>306</onup>
+						<onup>309</onup>
 						<ondown>130</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="111">
 						<description>(0,11) key button</description>
-						<onup>306</onup>
+						<onup>309</onup>
 						<ondown>131</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="112">
 						<description>(0,12) key button</description>
-						<onup>306</onup>
+						<onup>309</onup>
 						<ondown>132</ondown>
 						<include>KeyboardButton</include>
 					</control>
@@ -188,7 +190,8 @@
 							<height>76</height>
 							<onleft>112</onleft>
 							<onright>100</onright>
-							<onup>309</onup>
+							<onup condition="Control.IsVisible(310)">310</onup>
+							<onup condition="!Control.IsVisible(310)">309</onup>
 							<ondown>300</ondown>
 							<texturenofocus colordiffuse="grey3">white.png</texturenofocus>
 							<texturefocus>list_focus.png</texturefocus>
@@ -224,67 +227,67 @@
 					<control type="button" id="121">
 						<description>(1,1) key button</description>
 						<onup>101</onup>
-						<ondown>141</ondown>
+						<ondown>140</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="122">
 						<description>(1,2) key button</description>
 						<onup>102</onup>
-						<ondown>142</ondown>
+						<ondown>141</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="123">
 						<description>(1,3) key button</description>
 						<onup>103</onup>
-						<ondown>143</ondown>
+						<ondown>142</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="124">
 						<description>(1,4) key button</description>
 						<onup>104</onup>
-						<ondown>144</ondown>
+						<ondown>143</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="125">
 						<description>(1,5) key button</description>
 						<onup>105</onup>
-						<ondown>145</ondown>
+						<ondown>144</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="126">
 						<description>(1,6) key button</description>
 						<onup>106</onup>
-						<ondown>146</ondown>
+						<ondown>145</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="127">
 						<description>(1,7) key button</description>
 						<onup>107</onup>
-						<ondown>147</ondown>
+						<ondown>146</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="128">
 						<description>(1,8) key button</description>
 						<onup>108</onup>
-						<ondown>148</ondown>
+						<ondown>147</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="129">
 						<description>(1,9) key button</description>
 						<onup>109</onup>
-						<ondown>149</ondown>
+						<ondown>148</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="130">
 						<description>(1,10) key button</description>
 						<onup>110</onup>
-						<ondown>150</ondown>
+						<ondown>149</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="131">
 						<description>(1,11) key button</description>
 						<onup>111</onup>
-						<ondown>151</ondown>
+						<ondown>150</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="132">
@@ -336,67 +339,67 @@
 					<itemgap>4</itemgap>
 					<control type="button" id="140">
 						<description>(2,0) key button</description>
-						<onup>120</onup>
+						<onup>121</onup>
 						<ondown>160</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="141">
 						<description>(2,1) key button</description>
-						<onup>121</onup>
+						<onup>122</onup>
 						<ondown>161</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="142">
 						<description>(2,2) key button</description>
-						<onup>122</onup>
+						<onup>123</onup>
 						<ondown>162</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="143">
 						<description>(2,3) key button</description>
-						<onup>123</onup>
+						<onup>124</onup>
 						<ondown>163</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="144">
 						<description>(2,4) key button</description>
-						<onup>124</onup>
+						<onup>125</onup>
 						<ondown>164</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="145">
 						<description>(2,5) key button</description>
-						<onup>125</onup>
+						<onup>126</onup>
 						<ondown>165</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="146">
 						<description>(2,6) key button</description>
-						<onup>126</onup>
+						<onup>127</onup>
 						<ondown>166</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="147">
 						<description>(2,7) key button</description>
-						<onup>127</onup>
+						<onup>128</onup>
 						<ondown>167</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="148">
 						<description>(2,8) key button</description>
-						<onup>128</onup>
+						<onup>129</onup>
 						<ondown>168</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="149">
 						<description>(2,9) key button</description>
-						<onup>129</onup>
+						<onup>130</onup>
 						<ondown>169</ondown>
 						<include>KeyboardButton</include>
 					</control>
 					<control type="button" id="150">
 						<description>(2,10) key button</description>
-						<onup>130</onup>
+						<onup>131</onup>
 						<ondown>170</ondown>
 						<include>KeyboardButton</include>
 					</control>
@@ -414,8 +417,6 @@
 					</control>
 					<control type="togglebutton" id="303">
 						<description>CAPS LOCK button</description>
-						<posx>0</posx>
-						<posy>170</posy>
 						<width>128</width>
 						<height>76</height>
 						<onleft>152</onleft>
@@ -533,7 +534,8 @@
 							<onleft>172</onleft>
 							<onright>160</onright>
 							<onup>303</onup>
-							<ondown>309</ondown>
+							<ondown condition="Control.IsVisible(310)">310</ondown>
+							<ondown condition="!Control.IsVisible(310)">309</ondown>
 							<texturenofocus colordiffuse="grey3">white.png</texturenofocus>
 							<texturefocus>list_focus.png</texturefocus>
 							<textcolor>white</textcolor>
@@ -562,10 +564,11 @@
 					<itemgap>4</itemgap>
 					<control type="button" id="307">
 						<description>IP Input button</description>
-						<posx>0</posx>
-						<posy>85</posy>
 						<width>128</width>
 						<height>76</height>
+						<onleft condition="Control.IsVisible(310)">310</onleft>
+						<onleft condition="!Control.IsVisible(310)">309</onleft>
+						<onright>304</onright>
 						<onup>160</onup>
 						<ondown>100</ondown>
 						<texturenofocus colordiffuse="grey3">white.png</texturenofocus>
@@ -580,6 +583,8 @@
 						<description>Symbols button</description>
 						<width>128</width>
 						<height>76</height>
+						<onleft>307</onleft>
+						<onright>305</onright>
 						<onup>162</onup>
 						<ondown>102</ondown>
 						<texturenofocus colordiffuse="grey3">white.png</texturenofocus>
@@ -607,7 +612,7 @@
 							<onleft>304</onleft>
 							<onright>306</onright>
 							<onup>164</onup>
-							<ondown>104</ondown>	
+							<ondown>104</ondown>
 							<texturenofocus colordiffuse="grey3">white.png</texturenofocus>
 							<texturefocus>list_focus.png</texturefocus>
 							<textcolor>white</textcolor>
@@ -680,9 +685,10 @@
 						<height>76</height>
 						<label>20177</label>
 						<onleft>32</onleft>
-						<onright>310</onright>
+						<onright condition="Control.IsVisible(310)">310</onright>
+						<onright condition="!Control.IsVisible(310)">307</onright>
 						<onup>302</onup>
-						<ondown>110</ondown>
+						<ondown>111</ondown>
 						<texturenofocus colordiffuse="grey3">white.png</texturenofocus>
 						<texturefocus>list_focus.png</texturefocus>
 						<textcolor>white</textcolor>
@@ -695,6 +701,7 @@
 						<posy>0</posy>
 						<width>76</width>
 						<height>76</height>
+						<visible>Control.IsVisible(310)</visible>
 						<control type="button" id="310">
 							<description>show password button</description>
 							<posx>0</posx>
@@ -721,7 +728,6 @@
 							<height>40</height>
 							<aspectratio>keep</aspectratio>
 							<texture>$VAR[PasswordButton]</texture>
-							<visible>Control.IsVisible(310)</visible>
 						</control>
 					</control>
 				</control>

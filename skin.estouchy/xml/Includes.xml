@@ -473,6 +473,7 @@
 		<height>120</height>
 		<onleft>9002</onleft>
 		<onright>9002</onright>
+		<onup condition="Window.IsVisible(VideoOSD)">203</onup>
 		<onup condition="!String.IsEmpty(Window(Home).Property(PopupMenuVisible))">9003</onup>
 		<onup condition="Window.IsVisible(Home)">9001</onup>
 		<onup condition="!Window.IsVisible(Home) + String.IsEmpty(Window(Home).Property(PopupMenuVisible)) + Control.IsVisible(50)">50</onup>

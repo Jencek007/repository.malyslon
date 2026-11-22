@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <addons>
-    <addon id="skin.estouchy" version="4.0.28" name="Estouchy" provider-name="Team Kodi, Jencek007">
+    <addon id="repository.malyslon" name="MalyslonRepo" version="1.0.6" provider-name="Jencek007">
+        <extension point="xbmc.addon.repository" name="MalyslonRepo">
+            <dir>
+                <info compressed="false">https://jencek007.github.io/repository.malyslon/zips/addons.xml</info>
+                <checksum>https://jencek007.github.io/repository.malyslon/zips/addons.xml.md5</checksum>
+                <datadir zip="true">https://jencek007.github.io/repository.malyslon/zips/</datadir>
+            </dir>
+        </extension>
+        <extension point="xbmc.addon.metadata">
+            <summary>Personal Kodi repository malyslon</summary>
+            <description lang="cs">Osobní Kodi repozitář malyslon</description>
+            <platform>all</platform>
+            <assets>
+                <icon>icon.png</icon>
+                <fanart>fanart.jpg</fanart>
+            </assets>
+        </extension>
+    </addon>
+    <addon id="skin.estouchy" version="4.0.29" name="Estouchy" provider-name="Team Kodi, Jencek007">
         <requires>
             <import addon="xbmc.gui" version="5.17.0" />
         </requires>
@@ -129,24 +147,6 @@
             <description lang="vi_VN">Giao diện được thiết kế để sử dụng trên thiết bị màn hình cảm ứng như máy tính bảng và điện thoại thông minh</description>
             <description lang="zh_CN">为触屏设备如平板电脑和智能手机而设计的皮肤</description>
             <description lang="zh_TW">本佈景主題專為平板及手機等具有觸控螢幕的裝置而設計</description>
-        </extension>
-    </addon>
-    <addon id="repository.malyslon" name="MalyslonRepo" version="1.0.6" provider-name="Jencek007">
-        <extension point="xbmc.addon.repository" name="MalyslonRepo">
-            <dir>
-                <info compressed="false">https://jencek007.github.io/repository.malyslon/zips/addons.xml</info>
-                <checksum>https://jencek007.github.io/repository.malyslon/zips/addons.xml.md5</checksum>
-                <datadir zip="true">https://jencek007.github.io/repository.malyslon/zips/</datadir>
-            </dir>
-        </extension>
-        <extension point="xbmc.addon.metadata">
-            <summary>Personal Kodi repository malyslon</summary>
-            <description lang="cs">Osobní Kodi repozitář malyslon</description>
-            <platform>all</platform>
-            <assets>
-                <icon>icon.png</icon>
-                <fanart>fanart.jpg</fanart>
-            </assets>
         </extension>
     </addon>
 </addons>

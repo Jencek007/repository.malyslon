@@ -221,7 +221,7 @@
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$VAR[OSDLabel6]</label>
-				<visible>!String.IsEmpty(System.BatteryLevel)</visible>
+				<visible>!String.IsEmpty(System.BatteryLevel) + !String.IsEqual(System.BatteryLevel, 0%)</visible>
 			</control>
 		</control>
 
@@ -269,7 +269,7 @@
 				<control type="label">
 					<posx>280</posx>
 					<posy>50</posy>
-					<width>780</width>
+					<width>880</width>
 					<height>30</height>
 					<font>font30_title</font>
 					<align>left</align>
@@ -305,7 +305,7 @@
 				<!-- JEDEN ŘÁDEK METADAT (začíná na 780px, končí nejpozději na 1240px) -->
 				<control type="label">
 					<posx>980</posx>
-					<posy>50</posy>
+					<posy>85</posy>
 					<width>460</width>
 					<height>30</height>
 					<align>left</align>
@@ -341,7 +341,7 @@
 						<texture>$INFO[MusicPlayer.Codec,flagging/audio/,.png]</texture>
 					</control>
 				</control>
-				<control type="group"> <!-- bottom group - fanart, codec info, time, battery -->
+				<control type="group"> <!-- bottom group - fanart, codec info -->
 					<posx>230r</posx>
 					<posy>30</posy>
 					<width>250</width>
@@ -415,7 +415,7 @@
 						<height>125</height>
 						<onright>202</onright>
 						<ondown>9002</ondown>
-						<texturefocus colordiffuse="FF49ADEE">osd_previous.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_previous.png</texturefocus>
 						<texturenofocus colordiffuse="5049ADEE">osd_previous.png</texturenofocus>
 						<onclick>PlayerControl(Previous)</onclick>
 					</control>
@@ -432,7 +432,7 @@
 						<onleft>201</onleft>
 						<onright>203</onright>
 						<ondown>9002</ondown>
-						<texturefocus colordiffuse="FF49ADEE">osd_rewind.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_rewind.png</texturefocus>
 						<texturenofocus colordiffuse="5049ADEE">osd_rewind.png</texturenofocus>
 						<onclick>PlayerControl(Rewind)</onclick>
 					</control>
@@ -444,9 +444,10 @@
 					<height>260</height>
 					<onleft>202</onleft>
 					<onright>204</onright>
-					<texturefocus colordiffuse="FF48ADEE">osd_pause.png</texturefocus>
+					<ondown>9002</ondown>
+					<texturefocus colordiffuse="8048ADEE">osd_pause.png</texturefocus>
 					<texturenofocus colordiffuse="5049ADEE">osd_pause.png</texturenofocus>
-					<alttexturefocus colordiffuse="FF49ADEE">osd_play.png</alttexturefocus>
+					<alttexturefocus colordiffuse="8049ADEE">osd_play.png</alttexturefocus>
 					<alttexturenofocus colordiffuse="5049ADEE">osd_play.png</alttexturenofocus>
 					<usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
 					<onclick>PlayerControl(Play)</onclick>
@@ -463,7 +464,7 @@
 						<onleft>203</onleft>
 						<onright>205</onright>
 						<ondown>9002</ondown>
-						<texturefocus colordiffuse="FF49ADEE">osd_forward.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_forward.png</texturefocus>
 						<texturenofocus colordiffuse="5049ADEE">osd_forward.png</texturenofocus>
 						<onclick>PlayerControl(Forward)</onclick>
 					</control>
@@ -481,7 +482,7 @@
 						<onleft>204</onleft>
 						<onright>206</onright>
 						<ondown>9002</ondown>
-						<texturefocus colordiffuse="FF49ADEE">osd_next.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_next.png</texturefocus>
 						<texturenofocus colordiffuse="5049ADEE">osd_next.png</texturenofocus>
 						<onclick>PlayerControl(Next)</onclick>
 					</control>
@@ -498,7 +499,7 @@
 						<onleft>205</onleft>
 						<onright>700</onright>
 						<ondown>9002</ondown>
-						<texturefocus colordiffuse="FF49ADEE">osd_stop.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_stop.png</texturefocus>
 						<texturenofocus colordiffuse="5049ADEE">osd_stop.png</texturenofocus>
 						<onclick>PlayerControl(Stop)</onclick>
 					</control>
@@ -519,7 +520,7 @@
 						<onleft>206</onleft>
 						<onright>208</onright>
 						<ondown>9002</ondown>	
-						<texturefocus colordiffuse="FF49ADEE">osd_subtitle.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_subtitle.png</texturefocus>
 						<texturenofocus colordiffuse="5049ADEE">osd_subtitle.png</texturenofocus>
 						<onclick>Action(nextsubtitle)</onclick>
 					</control>
@@ -546,7 +547,7 @@
 						<width>250</width>
 						<height>45</height>
 						<font>font30_title</font>
-						<textcolor>FF49ADEE</textcolor>
+						<textcolor>8049ADEE</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
@@ -578,7 +579,7 @@
 						<width>250</width>
 						<height>45</height>
 						<font>font30_title</font>
-						<textcolor>FF49ADEE</textcolor>
+						<textcolor>8049ADEE</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
 						<scroll>true</scroll>
@@ -601,7 +602,7 @@
 						<onleft>700</onleft>
 						<onright>700</onright>
 						<ondown>9002</ondown>
-						<texturefocus colordiffuse="FF49ADEE">osd_record.png</texturefocus>
+						<texturefocus colordiffuse="8049ADEE">osd_record.png</texturefocus>
 						<texturenofocus>osd_record.png</texturenofocus>
 						<alttexturefocus colordiffuse="red">osd_record.png</alttexturefocus>
 						<alttexturenofocus colordiffuse="red">osd_record.png</alttexturenofocus>

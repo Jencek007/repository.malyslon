@@ -1,3 +1,7 @@
+V4.0.29 (2026.11.22)
+-update visibility VideoOSD 
+-First change keyboard
+
 V4.0.28 (2026.11.19)
 -change subtitles switch to image 
 -OSD Real time like Estuary with time end of movie
