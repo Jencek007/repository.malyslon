@@ -1,3 +1,6 @@
+V4.0.30 (2026.11.24)
+-add MPAA rating, Studio
+
 V4.0.29 (2026.11.22)
 -update visibility VideoOSD 
 -First change keyboard

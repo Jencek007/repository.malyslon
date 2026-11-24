@@ -304,7 +304,7 @@
 				</control>
 				<!-- JEDEN ŘÁDEK METADAT (začíná na 780px, končí nejpozději na 1240px) -->
 				<control type="label">
-					<posx>980</posx>
+					<posx>880</posx>
 					<posy>85</posy>
 					<width>460</width>
 					<height>30</height>
@@ -314,10 +314,11 @@
 					<textcolor>FF49ADEE</textcolor>
 					<scroll>true</scroll>
 					<scrollspeed>40</scrollspeed>
-					<scrollsuffix>   •   </scrollsuffix>
-					<label>$INFO[VideoPlayer.Rating,★ ,  •  ]$INFO[VideoPlayer.Year]$INFO[VideoPlayer.HdrType,  •  [,]]</label>
-					<visible>Window.IsVisible(VideoOSD) + [!String.IsEmpty(VideoPlayer.Rating) | !String.IsEmpty(VideoPlayer.Year) | !String.IsEmpty(VideoPlayer.HdrType)]</visible>
+					<scrollsuffix> • </scrollsuffix>
+					<label>$INFO[VideoPlayer.Rating,★ ]$INFO[VideoPlayer.Year, • ]$INFO[VideoPlayer.MPAA, • ]$INFO[VideoPlayer.Studio, • ]$INFO[VideoPlayer.HdrType, • [,]]</label>
+					<visible>Window.IsVisible(VideoOSD) + [!String.IsEmpty(VideoPlayer.Rating) | !String.IsEmpty(VideoPlayer.Year) | !String.IsEmpty(VideoPlayer.MPAA) | !String.IsEmpty(VideoPlayer.Studio) | !String.IsEmpty(VideoPlayer.HdrType)]</visible>
 				</control>
+
 				<control type="group">
 					<posx>275r</posx>
 					<posy>30</posy>
