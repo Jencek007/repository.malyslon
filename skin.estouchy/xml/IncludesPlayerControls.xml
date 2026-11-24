@@ -180,6 +180,27 @@
 					<textureslidernib></textureslidernib>
 					<textureslidernibfocus></textureslidernibfocus>
 				</control>
+					<control type="label">
+					<description>Progress and Cache Percentage</description>
+					<posx>564</posx>
+					<posy>34</posy>
+					<width>180</width>
+					<height>24</height>
+					<font>font20_title</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>[COLOR blue]$INFO[Player.Progress,, %][/COLOR][COLOR grey2]$INFO[Player.ProgressCache, (, %)][/COLOR]</label>
+				</control>
+				<control type="button" id="999">
+					<description>Hidden button over percentage for PlayerDebug (Ctrl+Shift+O)</description>
+					<posx>564</posx>
+					<posy>30</posy>
+					<width>180</width>
+					<height>32</height>
+					<texturenofocus></texturenofocus>
+					<texturefocus></texturefocus>
+					<onclick>PlayerDebug</onclick>
+				</control>
 			</control>
 		</control>
 

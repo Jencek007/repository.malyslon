@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
+	<onload>AlarmClock(CloseStartupVolume,Dialog.Close(volumebar,true),00:00:05,silent,false)</onload>
 	<onload>ReplaceWindow($INFO[System.StartupWindow])</onload>
 </window>
