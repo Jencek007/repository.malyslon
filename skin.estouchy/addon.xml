@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.estouchy" version="4.0.31" name="Estouchy" provider-name="Team Kodi, Jencek007">
+<addon id="skin.estouchy" version="4.0.32" name="Estouchy" provider-name="Team Kodi, Jencek007">
 	<requires>
 		<import addon="xbmc.gui" version="5.17.0"/>
 	</requires>
@@ -128,5 +128,10 @@
 		<description lang="vi_VN">Giao diện được thiết kế để sử dụng trên thiết bị màn hình cảm ứng như máy tính bảng và điện thoại thông minh</description>
 		<description lang="zh_CN">为触屏设备如平板电脑和智能手机而设计的皮肤</description>
 		<description lang="zh_TW">本佈景主題專為平板及手機等具有觸控螢幕的裝置而設計</description>
+		<news>V4.0.32 (2026.11.26) - Changed Dialog Selected to bigger size
+			V4.0.31 (2026.11.25) - fix volume at home if volume is 0% - issue from glassfire8 - thanks, Add progress/cache percentage next to progress bar + (hidden function PlayerDebug)
+			V4.0.30 (2026.11.24) - add MPAA rating, Studio
+			
+		</news>
 	</extension>
 </addon>

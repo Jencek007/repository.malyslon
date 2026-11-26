@@ -2,10 +2,15 @@
 <fonts>
 	<fontset id="Default" idloc="31390">
 	<!-- Normal Fonts -->
-		<font>
-			<name>font13</name>
+		<font> <!-- Debug Font -->
+			<name>font10</name> 
 			<filename>NotoSans-Regular.ttf</filename>
-			<size>13</size>
+			<size>20</size>
+		</font>
+		<font> <!-- Debug Font -->
+			<name>font12</name>
+			<filename>NotoSans-Regular.ttf</filename>
+			<size>24</size>
 		</font>
 		<font>
 			<name>font14</name>
@@ -123,6 +128,16 @@
 	</fontset>
 	<fontset id="Arial" idloc="31391">
 	<!-- Normal Fonts -->
+		<font> <!-- Debug Font -->
+			<name>font10</name>
+			<filename>Arial.ttf</filename>
+			<size>24</size>
+		</font>
+		<font> <!-- Debug Font -->
+			<name>font12</name>
+			<filename>Arial.ttf</filename>
+			<size>24</size>
+		</font>
 		<font>
 			<name>font13</name>
 			<filename>Arial.ttf</filename>
