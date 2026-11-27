@@ -182,6 +182,10 @@ msgctxt "#31059"
 msgid "Current playlist"
 msgstr "Aktuální seznam stop"
 
+msgctxt "#31110"
+msgid "ScreenShots"
+msgstr "Náhledy"
+
 msgctxt "#31200"
 msgid "Back"
 msgstr "Zpět"
@@ -354,7 +358,32 @@ msgctxt "#31565"
 msgid "Show deleted"
 msgstr "Zobrazit odstraněné"
 
-# empty strings from id 31566 to 31599
+msgctxt "#31566"
+msgid "Extras"
+msgstr "Něco navíc"
+
+msgctxt "#31567"
+msgid "Skin Debug"
+msgstr "Debugovací vrstva"
+
+msgctxt "#31568"
+msgid "Show skin debug information (XML, ID, cursor)"
+msgstr "Zobrazí ladicí informace skinu (XML, ID, kurzor)"
+
+msgctxt "#31569"
+msgid "Show percentages and cache"
+msgstr "Zobrazit procenta a cache"
+
+msgctxt "#31570"
+msgid "Displays the percentage of elapsed time and the buffer status near the seek bar. A hidden PlayerDebug feature."
+msgstr "Zobrazí procenta odehraného času a stav vyrovnávací paměti u posuvníku. Skrytá funkce PlayerDebug"
+
+msgctxt "#31571"
+msgid "Resets all skin settings to their default state"
+msgstr "Obnoví veškerá nastavení skinu do výchozího stavu"
+
+# empty strings from id 31572 to 31599
+
 #. Label to show the video codec name
 msgctxt "#31600"
 msgid "Video codec"

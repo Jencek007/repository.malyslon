@@ -1,6 +1,9 @@
+V4.1.0 (2026.11.00)
+-Add Extra to SkinSettings(DebugInfo....)
+-Change AddonInfo - News, version...
+
 V4.0.32 (2026.11.26)
 -DialogSelect bigger 
-
 
 V4.0.31 (2026.11.25)
 -fix volume at home if volume is 0% - issue from glassfire8 - thanks

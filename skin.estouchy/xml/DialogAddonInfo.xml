@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
+	<onunload>ClearProperty(AddonInfoView)</onunload>
 	<include>16x9_xPos_Relocation</include>
 	<include>Window_OpenClose_Animation_Zoom</include>
 	<coordinates>
@@ -59,6 +60,8 @@
 				<aspectratio>keep</aspectratio>
 				<texture background="true">$INFO[ListItem.Icon]</texture>
 			</control>
+
+			<!-- NADPISY POHLEDŮ -->
 			<control type="label">
 				<posx>280</posx>
 				<posy>50</posy>
@@ -68,9 +71,34 @@
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$LOCALIZE[21821]$INFO[Container(601).CurrentPage, ( $LOCALIZE[31024] ]$INFO[Container(601).NumPages,/, )]</label>
+				<visible>String.IsEmpty(Window.Property(AddonInfoView))</visible>
 			</control>
+			<control type="label">
+				<posx>280</posx>
+				<posy>50</posy>
+				<width>660</width>
+				<height>30</height>
+				<font>font20_title</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[24036]$INFO[Container(602).CurrentPage, ( $LOCALIZE[31024] ]$INFO[Container(602).NumPages,/, )]</label>
+				<visible>String.IsEqual(Window.Property(AddonInfoView),news)</visible>
+			</control>
+			<control type="label">
+				<posx>280</posx>
+				<posy>50</posy>
+				<width>660</width>
+				<height>30</height>
+				<font>font20_title</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[31110] ($INFO[Container(50).NumItems])</label>
+				<visible>String.IsEqual(Window.Property(AddonInfoView),screenshots)</visible>
+			</control>
+
+			<!-- 1. POPIS DOPLŇKU -->
 			<control type="textbox" id="601">
-				<description>Description Value for Albums</description>
+				<description>Description Value</description>
 				<posx>280</posx>
 				<posy>82</posy>
 				<width>660</width>
@@ -78,7 +106,65 @@
 				<font>font20</font>
 				<pagecontrol></pagecontrol>
 				<label>$INFO[ListItem.AddonDescription]</label>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+				<visible>String.IsEmpty(Window.Property(AddonInfoView))</visible>
 			</control>
+
+			<!-- 2. CO JE NOVÉHO -->
+			<control type="textbox" id="602">
+				<description>Addon News Value</description>
+				<posx>280</posx>
+				<posy>82</posy>
+				<width>660</width>
+				<height>230</height>
+				<font>font20</font>
+				<pagecontrol></pagecontrol>
+				<label>$INFO[ListItem.AddonNews]</label>
+				<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+				<visible>String.IsEqual(Window.Property(AddonInfoView),news)</visible>
+			</control>
+
+			<!-- 3. SCREENSHOTY -->
+			<control type="panel" id="50">
+				<posx>280</posx>
+				<posy>82</posy>
+				<width>660</width>
+				<height>245</height>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<orientation>horizontal</orientation>
+				<visible>String.IsEqual(Window.Property(AddonInfoView),screenshots)</visible>
+				<itemlayout width="330" height="245">
+					<control type="image">
+						<posx>5</posx>
+						<posy>5</posy>
+						<width>320</width>
+						<height>235</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+					</control>
+				</itemlayout>
+				<focusedlayout width="330" height="245">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>330</width>
+						<height>245</height>
+						<texture border="5">list_focus.png</texture>
+					</control>
+					<control type="image">
+						<posx>5</posx>
+						<posy>5</posy>
+						<width>320</width>
+						<height>235</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Icon]</texture>
+					</control>
+				</focusedlayout>
+			</control>
+
 			<control type="image">
 				<posx>0</posx>
 				<posy>340</posy>
@@ -250,15 +336,16 @@
 		</control>
 		<control type="grouplist" id="9000">
 			<posx>980</posx>
-			<posy>120</posy>
+			<posy>100</posy>
 			<width>250</width>
-			<height>490</height>
-			<onleft>9000</onleft>
+			<height>510</height>
+			<itemgap>2</itemgap>
+			<onleft>50</onleft>
 			<onright>9000</onright>
-			<onup>50</onup>
-			<ondown>49</ondown>
-			<control type="button" id ="6">
-				<description>Enable Addon button</description>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<control type="button" id="6">
+				<description>Enable / Use Addon button</description>
 				<width>250</width>
 				<include>ButtonInfoDialogsCommonValues</include>
 				<label>24022</label>
@@ -294,6 +381,29 @@
 				<width>250</width>
 				<include>ButtonInfoDialogsCommonValues</include>
 				<label></label>
+			</control>
+			<control type="button" id="9001">
+				<description>Description button</description>
+				<width>250</width>
+				<include>ButtonInfoDialogsCommonValues</include>
+				<label>21821</label>
+				<onclick>ClearProperty(AddonInfoView)</onclick>
+			</control>
+			<control type="button" id="9002">
+				<description>What's New button</description>
+				<width>250</width>
+				<include>ButtonInfoDialogsCommonValues</include>
+				<label>24036</label>
+				<onclick>SetProperty(AddonInfoView,news)</onclick>
+				<visible>!String.IsEmpty(ListItem.AddonNews)</visible>
+			</control>
+			<control type="button" id="9003">
+				<description>Screenshots button</description>
+				<width>250</width>
+				<include>ButtonInfoDialogsCommonValues</include>
+				<label>31110</label>
+				<onclick>SetProperty(AddonInfoView,screenshots)</onclick>
+				<visible>Integer.IsGreater(Container(50).NumItems,0)</visible>
 			</control>
 		</control>
 	</controls>

@@ -129,7 +129,7 @@
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
-					<label>[B]$INFO[ListItem.Label][/B]</label>
+				<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="textbox">
 					<posx>25</posx>
@@ -168,7 +168,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<label>$INFO[ListItem.Label]</label>
 				</control>
 				<control type="textbox">
 					<posx>25</posx>

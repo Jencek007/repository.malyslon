@@ -190,6 +190,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<label>[COLOR blue]$INFO[Player.Progress,, %][/COLOR][COLOR grey2]$INFO[Player.ProgressCache, (, %)][/COLOR]</label>
+					<visible>Skin.HasSetting(PercentageViewAndCache)</visible>
 				</control>
 				<control type="button" id="999">
 					<description>Hidden button over percentage for PlayerDebug (Ctrl+Shift+O)</description>
@@ -200,6 +201,7 @@
 					<texturenofocus></texturenofocus>
 					<texturefocus></texturefocus>
 					<onclick>PlayerDebug</onclick>
+					<visible>Skin.HasSetting(PercentageViewAndCache)</visible>
 				</control>
 			</control>
 		</control>
@@ -319,7 +321,7 @@
 					<font>font24</font>
 					<textcolor>FFD0D0D0</textcolor>
 					<align>justify</align>
-					<autoscroll time="3000" delay="4000" repeat="5000">true</autoscroll>
+					<autoscroll time="5000" delay="10000" repeat="5000">true</autoscroll>
 					<label>$INFO[VideoPlayer.Plot]</label>
 					<visible>Window.IsVisible(VideoOSD) + !String.IsEmpty(VideoPlayer.Plot)</visible>
 				</control>

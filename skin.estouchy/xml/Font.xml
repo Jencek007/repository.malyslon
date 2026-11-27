@@ -141,7 +141,7 @@
 		<font>
 			<name>font13</name>
 			<filename>Arial.ttf</filename>
-			<size>24</size>
+			<size>13</size>
 		</font>
 		<font>
 			<name>font16</name>
@@ -183,6 +183,12 @@
 			<name>font11_title</name>
 			<filename>Arial.ttf</filename>
 			<size>11</size>
+			<style>bold</style>
+		</font>
+		<font>
+			<name>font13_title</name>
+			<filename>Arial.ttf</filename>
+			<size>13</size>
 			<style>bold</style>
 		</font>
 		<font>

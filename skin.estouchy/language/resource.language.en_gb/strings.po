@@ -204,7 +204,13 @@ msgctxt "#31059"
 msgid "Current playlist"
 msgstr ""
 
+msgctxt "#31110"
+msgid "ScreenShots"
+msgstr ""
+
 #empty strings from id 31060 to 31199
+
+
 #Submenu labels
 
 msgctxt "#31200"
@@ -406,7 +412,31 @@ msgctxt "#31565"
 msgid "Show deleted"
 msgstr ""
 
-#empty strings from id 31566 to 31599
+msgctxt "#31566"
+msgid "Extras"
+msgstr ""
+
+msgctxt "#31567"
+msgid "Skin Debug"
+msgstr ""
+
+msgctxt "#31568"
+msgid "Show skin debug information (XML, ID, cursor)"
+msgstr ""
+
+msgctxt "#31569"
+msgid "Show percentages and cache"
+msgstr ""
+
+msgctxt "#31570"
+msgid "Displays the percentage of elapsed time and the buffer status near the seek bar. A hidden PlayerDebug feature."
+msgstr ""
+
+msgctxt "#31571"
+msgid "Resets all skin settings to their default state"
+msgstr ""
+
+#empty strings from id 31572 to 31599
 
 #: /xml/DialogPlayerProcessInfo.xml
 #. Label to show the video codec name

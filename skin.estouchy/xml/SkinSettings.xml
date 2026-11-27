@@ -72,6 +72,21 @@
 					<onright>300</onright>
 					<onfocus>Skin.SetString(SkinSettings,3)</onfocus>
 				</control>
+					<control type="button" id="94">
+					<description>Extra Button</description>
+					<width>390</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<texturefocus>list_focus.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label>31566</label>
+					<textoffsetx>20</textoffsetx>
+					<onright>400</onright>
+					<onfocus>Skin.SetString(SkinSettings,4)</onfocus>
+				</control>
 			</control>
 			<include content="SkinSettingsContent" condition="String.IsEqual(Skin.AspectRatio,16:9)">
 				<param name="panel-width">1316</param>

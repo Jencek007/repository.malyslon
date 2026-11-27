@@ -2365,6 +2365,141 @@
 				<textoffsetx>20</textoffsetx>
 			</control>
 		</control>
+		<control type="grouplist" id="400">
+			<description>Extra control area</description>
+			<posx>390</posx>
+			<posy>140</posy>
+			<width>$PARAM[panel-width]</width>
+			<height>640</height>
+			<itemgap>-1</itemgap>
+			<onup>400</onup>
+			<ondown>9002</ondown>
+			<onleft>9</onleft>
+			<onright>9002</onright>
+			<visible>Skin.String(SkinSettings,4)</visible>
+			<control type="group">
+				<width>$PARAM[panel-width]</width>
+				<height>80</height>
+				<control type="radiobutton" id="401">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>$PARAM[panel-width]</width>
+					<height>80</height>
+					<texturefocus>list_focus.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label></label>
+					<onclick>Skin.ToggleDebug()</onclick>
+					<onclick>Skin.ToggleSetting(SkinDebugActive)</onclick>
+					<selected>Skin.HasSetting(SkinDebugActive)</selected>
+					<onleft>9</onleft>
+					<onright>60</onright>
+					<ondown>402</ondown>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>0</posy>
+					<width>350</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<label>31567</label>
+				</control>
+				<control type="label">
+					<posx>380</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>31568</label>
+				</control>
+			</control>
+			<control type="group">
+				<width>$PARAM[panel-width]</width>
+				<height>80</height>
+				<control type="radiobutton" id="402">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>$PARAM[panel-width]</width>
+					<height>80</height>
+					<texturefocus>list_focus.png</texturefocus>
+					<texturenofocus></texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<label></label>
+					<onclick>Skin.ToggleSetting(PercentageViewAndCache)</onclick>
+					<selected>Skin.HasSetting(PercentageViewAndCache)</selected>
+					<onleft>9</onleft>
+					<onright>60</onright>
+					<onup>401</onup>
+					<ondown>403</ondown>
+				</control>
+				<control type="label">
+					<posx>20</posx>
+					<posy>0</posy>
+					<width>350</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<label>31569</label>
+				</control>
+				<control type="label">
+					<posx>380</posx>
+					<posy>0</posy>
+					<width>750</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>31570</label>
+					<scroll>true</scroll>
+				</control>
+			</control>
+			<control type="group">
+				<width>$PARAM[panel-width]</width>
+				<height>80</height>
+				<control type="button" id="403">
+					<left>0</left>
+					<top>0</top>
+					<width>$PARAM[panel-width]</width>
+					<height>80</height>
+					<texturefocus>list_focus.png</texturefocus>
+					<texturenofocus />
+					<pulseonselect>false</pulseonselect>
+					<label />
+					<onclick>ActivateWindow(1150)</onclick>
+					<onleft>9</onleft>
+					<onright>60</onright>
+					<onup>402</onup>
+					<ondown>9002</ondown>
+				</control>
+				<control type="label">
+					<left>20</left>
+					<top>0</top>
+					<width>350</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font24_title</font>
+					<textcolor>white</textcolor>
+					<label>10041</label>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<left>380</left>
+					<top>0</top>
+					<width>750</width>
+					<height>80</height>
+					<aligny>center</aligny>
+					<font>font12</font>
+					<textcolor>grey</textcolor>
+					<label>31571</label>
+					<scroll>true</scroll>
+				</control>
+			</control>
+		</control>
 		<control type="image">
 			<posx>390</posx>
 			<posy>774</posy>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1150">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<include>16x9_xPos_Relocation</include>
+	<include>Window_OpenClose_Animation_Zoom</include>
+	<coordinates>
+		<left>340</left>
+		<top>310</top>
+	</coordinates>
+	<controls>
+		<include>BehindDialogFadeOut</include>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>600</width>
+			<height>60</height>
+			<texture border="5">dialog_header.png</texture>
+		</control>
+		<control type="label">
+			<left>20</left>
+			<top>0</top>
+			<width>560</width>
+			<height>60</height>
+			<include>WindowTitleCommons</include>
+			<label>$LOCALIZE[10041]</label>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>60</top>
+			<width>600</width>
+			<height>220</height>
+			<texture>dialog_back.png</texture>
+		</control>
+		<control type="textbox">
+			<left>30</left>
+			<top>85</top>
+			<width>540</width>
+			<height>90</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font20</font>
+			<label>$LOCALIZE[750]</label>
+		</control>
+		<control type="grouplist" id="9000">
+			<left>40</left>
+			<top>195</top>
+			<width>520</width>
+			<height>60</height>
+			<itemgap>20</itemgap>
+			<orientation>horizontal</orientation>
+			<align>center</align>
+			<control type="button" id="10">
+				<width>250</width>
+				<include>ButtonInfoDialogsCommonValues</include>
+				<label>106</label>
+				<onclick>Dialog.Close(1150)</onclick>
+			</control>
+			<control type="button" id="11">
+				<width>250</width>
+				<include>ButtonInfoDialogsCommonValues</include>
+				<label>107</label>
+				<onclick>Skin.ResetSettings</onclick>
+				<onclick>Dialog.Close(1150)</onclick>
+				<onclick>ReloadSkin()</onclick>
+			</control>
+		</control>
+	</controls>
+</window>
